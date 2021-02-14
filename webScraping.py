@@ -1,10 +1,10 @@
 from selenium import webdriver
      
-options = webdriver.ChromeOptions()     
-options.add_experimental_option('excludeSwitches', ['enable-logging'])
-driver = webdriver.Chrome(options=options)
+# options = webdriver.ChromeOptions()     
+# options.add_experimental_option('excludeSwitches', ['enable-logging'])
+# driver = webdriver.Chrome(options=options)
 
-PATH = r"C:\Users\Peter\Documents\GitHub\WebScraping\chromedriver.exe"
+PATH = r"chromedriver.exe"
 driver = webdriver.Chrome(executable_path=PATH)
 
 url = "https://chp-dashboard.geodata.gov.hk/covid-19/web/main.html?lang=zh"
@@ -23,7 +23,8 @@ population = 7500000
 for i in range(0, 4):
     data[i] = int(data[i].replace(',', ''))
 
-print("Total Case:", data[0])
+
+print("\nTotal Case:", data[0])
 print("Currently Hospitalisd:", data[1])
 print("Discharged:", data[2])
 print("Death:", data[3], '\n')
