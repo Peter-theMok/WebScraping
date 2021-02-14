@@ -15,6 +15,8 @@ discharged = driver.find_element_by_id("discharged").text
 hospitalized = driver.find_element_by_id("hospitalized").text
 death = driver.find_element_by_id("death").text
 
+driver.quit()
+
 data = [confirmed, hospitalized, discharged, death]
 population = 7500000
 
@@ -27,6 +29,7 @@ print("Discharged:", data[2])
 print("Death:", data[3], '\n')
 
 print("Infection rate:", round(float(data[0]/population)*100, 3), "%")
-print("Death rate:", round(float(data[3]/data[0])*100, 4), "%")
+print("Death rate:", round(float(data[3]/data[0])*100, 4), "%\n")
 
-driver.quit()
+print("Press any key to quit this program...")
+input()
